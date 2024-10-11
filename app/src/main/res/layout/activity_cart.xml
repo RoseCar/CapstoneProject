@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app"
+    tools:context=".CartActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp" />
+
+    <ImageButton
+        android:id="@+id/cartButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ico_shopping_bag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/cartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YOUR CART"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/continueShoppingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue Shopping"
+        android:backgroundTint="@color/pink"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/cartTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginTop="8dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productCard1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/continueShoppingButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/productImage1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/product_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_margin="16dp" />
+
+            <TextView
+                android:id="@+id/productTitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Product 1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/productImage1"
+                app:layout_constraintStart_toEndOf="@id/productImage1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:id="@+id/productPrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$15.00"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/productTitle1"
+                app:layout_constraintStart_toStartOf="@id/productTitle1"
+                app:layout_constraintMarginTop="4dp" />
+
+            <Button
+                android:id="@+id/removeProductButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove"
+                android:backgroundTint="@color/pink"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintMarginEnd="16dp"
+                app:layout_constraintMarginBottom="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/subtotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/productCard1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintMarginTop="16dp"
+        app:layout_constraintMarginStart="16dp" />
+
+    <TextView
+        android:id="@+id/subtotalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$10.00 CAD"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/subtotalLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginEnd="16dp" />
+
+    <Button
+        android:id="@+id/checkoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CHECKOUT"
+        android:backgroundTint="@color/pink"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintMarginStart="16dp"
+        app:layout_constraintMarginEnd="16dp"
+        app:layout_constraintMarginBottom="16dp" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/checkoutButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintMarginBottom="16dp">
+
+        <TextView
+            android:id="@+id/footerLinks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="QUICK LINKS\nShop\nAbout Us\nSchedule and Appointment"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/footerContact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CONTACT"
+            android:textSize="14sp"
+            android:gravity="end" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

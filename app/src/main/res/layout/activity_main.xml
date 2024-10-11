@@ -1,0 +1,291 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="visible"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ico_menu" />
+
+            <ImageView
+                android:id="@+id/logoutBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@+id/ivCart"
+                android:src="@drawable/baseline_logout_24" />
+
+
+
+            <ImageView
+                android:id="@+id/ivCart"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ico_shopping_bag" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/baseline_search_24" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/categoryTab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/navNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/navMakeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Makeup"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/navHair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/navAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/light_pink" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/product1Card"
+        android:layout_margin="10dp"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:background="@drawable/top_corner_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTab">
+
+        <ImageView
+            android:id="@+id/product4Image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/product_1"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/product1FavIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_favorite_border_24"
+            android:layout_gravity="end" />
+
+        <TextView
+            android:id="@+id/product1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product 1"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product1Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$15.00"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/product1AddIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_add_box_24"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/product2Card"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/top_corner_background"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="16dp"
+        app:layout_constraintStart_toEndOf="@+id/product1Card"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTab"
+        app:layout_constraintWidth_percent="0.4">
+
+        <TextView
+            android:id="@+id/product2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product 2"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product2Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$45.00"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/product2AddIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_add_box_24"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/product3Card"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/top_corner_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toEndOf="@+id/product1Card"
+        app:layout_constraintTop_toBottomOf="@+id/product2Card"
+        app:layout_constraintWidth_percent="0.4">
+
+        <TextView
+            android:id="@+id/product3Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product 3"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product3Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$45.00"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/product3AddIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_add_box_24"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/recommendedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/product1Card"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/product4Card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_corner_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="bottom"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/recommendedText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <ImageView
+            android:id="@+id/product4Image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/recomended"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/product4Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product 4"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product4Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$30.00"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/product4AddIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_add_box_24"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
